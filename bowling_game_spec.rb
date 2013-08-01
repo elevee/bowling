@@ -12,4 +12,11 @@ describe BowlingGame do
       expect(game.score).to eq(0)
     end
   end
+
+  context 'when one pin is knocked down on each roll' do
+    it 'scores the game as 20' do
+      20.times { game.roll(1) }
+      expect(game.score).to eq(20)
+    end
+  end
 end
