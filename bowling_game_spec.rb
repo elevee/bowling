@@ -19,4 +19,15 @@ describe BowlingGame do
       expect(game.score).to eq(20)
     end
   end
+
+  context 'when a spare is thrown' do
+    it 'records the frame score as 10 plus the number of pins knocked down in the next roll' do
+      3.times { game.roll(5) }
+      17.times { game.roll(0) }
+
+      expect(game.score).to eq(20)
+    end
+  end
+
+  
 end
