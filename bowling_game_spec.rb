@@ -39,4 +39,13 @@ describe BowlingGame do
       expect(game.score).to eq(26)
     end
   end
+
+  context 'in the event of a perfect game' do
+    it 'records bonus rolls at the end of the game' do
+      12.times { game.roll(10) }
+
+      expect(game.score).to eq(300)
+    end
+  end
+
 end
